@@ -23,7 +23,7 @@ def extract_text_from_pdf(pdf_path: Path) -> str:
     return "\n\n".join(collected_text).strip()
 
 def generate_questions_answers_with_openai(jd_text: str, num_questions: int, experience_level: str) -> str:
-    api_key = "-"
+    api_key = ""
     client = openai.OpenAI(api_key=api_key)
 
     level_descriptions = {
@@ -67,7 +67,7 @@ Make the questions relevant to the experience level and provide comprehensive an
         return f"Error generating questions: {str(e)}"
 
 def analyze_skill_gap_with_openai(jd_text: str, cv_text: str) -> str:
-    api_key = "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"
+    api_key = "-"
     client = openai.OpenAI(api_key=api_key)
 
     system_prompt = """You are an expert career coach and recruiter. Analyze the skill gap between a candidate's CV and a job description. Provide a comprehensive skill gap analysis with:
